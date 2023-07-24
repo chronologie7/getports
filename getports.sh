@@ -13,5 +13,5 @@ ipdata=$(cat $1 | awk FNR==3 | cut -d " " -f2)
 echo "(*) Proccessig data..."
 echo -e "\t(*) IP Address\t: $ipdata"
 echo -e "\t(*) Ports\t: $dataports"
-echo $dataports | xclip -sel clip
+echo $dataports | tr -d '\n' | xclip -sel clip
 echo "(*) Ports copied to clipboard!"
